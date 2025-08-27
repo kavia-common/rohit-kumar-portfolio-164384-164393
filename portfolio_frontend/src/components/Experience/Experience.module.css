@@ -1,0 +1,25 @@
+.title { font-size: 22px; margin-bottom: 14px; }
+
+.list {
+  display: grid;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.role { font-size: 18px; }
+.company { color: var(--muted); }
+.period { color: var(--muted); font-size: 14px; }
+
+.points {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.points li { margin-bottom: 6px; }

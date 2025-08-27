@@ -1,0 +1,23 @@
+.wrap { display: grid; gap: 14px; }
+
+.title {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.text { color: var(--muted); max-width: 72ch; }
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
+}

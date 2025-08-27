@@ -1,82 +1,47 @@
-# Lightweight React Template for KAVIA
+# Rohit Kumar — Portfolio Frontend (React)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern, minimalistic, and trendy portfolio SPA for Rohit Kumar with a responsive dark theme, smooth animations, and mobile‑first design.
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Responsive dark theme with theme toggle
+- Header navigation with smooth in‑page scrolling
+- Hero profile section with CTAs
+- About, Experience, Projects (gallery), and Contact sections
+- Resume/CV download button
+- Client‑side validated contact form
+- Social media integration and footer
+- Clean modular architecture using CSS Modules
 
-## Getting Started
+## Quick start
 
-In the project directory, you can run:
+1. Install dependencies
+   npm install
 
-### `npm start`
+2. Configure environment (optional)
+   Copy .env.example to .env and edit values.
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Run in development
+   npm start
 
-### `npm test`
+4. Build for production
+   npm run build
 
-Launches the test runner in interactive watch mode.
+## Configuration
 
-### `npm run build`
+Set the following variables in .env (optional):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- REACT_APP_SITE_URL: Public site URL (used for absolute resume link).
+- REACT_APP_RESUME_URL: Direct resume URL; if absent, app uses <SITE_URL>/resume.pdf.
+- REACT_APP_GITHUB_URL, REACT_APP_LINKEDIN_URL, REACT_APP_TWITTER_URL: Social links.
 
-## Customization
+## Styling
 
-### Colors
+- Colors: primary #1a73e8, accent #ff6f61, secondary #23282d
+- See src/App.css for global variables and utilities
+- Component styles live next to components as CSS Modules
 
-The main brand colors are defined as CSS variables in `src/App.css`:
+## Notes
 
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Contact form is client‑only demo (no backend integration).
+- To provide a real resume, place resume.pdf in the public/ folder or set REACT_APP_RESUME_URL.

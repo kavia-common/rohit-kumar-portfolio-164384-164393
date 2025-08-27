@@ -1,104 +1,121 @@
-/* CSS Variables for Theme Management */
+/* Global base styles, theme variables, and utilities for the portfolio SPA */
+
+/* Base palette (overridden by theme.js via CSS variables) */
 :root {
-  /* Light theme colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #282c34;
-  --text-secondary: #61dafb;
-  --border-color: #e9ecef;
-  --button-bg: #007bff;
-  --button-text: #ffffff;
+  --color-primary: #1a73e8;  /* primary */
+  --color-accent: #ff6f61;   /* accent */
+  --color-secondary: #23282d;/* secondary/dark surface */
+
+  --bg: #0f1115;
+  --surface: #161a20;
+  --text: #e8eef7;
+  --muted: #9aa4b2;
+  --border: rgba(255,255,255,0.08);
+  --ring: rgba(26,115,232,0.5);
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
+/* Light theme override */
+[data-theme="light"] {
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --text: #111319;
+  --muted: #4b5563;
+  --border: rgba(0,0,0,0.08);
+  --ring: rgba(26,115,232,0.25);
+}
+
+/* Dark theme override (default) */
 [data-theme="dark"] {
-  /* Dark theme colors */
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #282c34;
-  --text-primary: #ffffff;
-  --text-secondary: #61dafb;
-  --border-color: #404040;
-  --button-bg: #0056b3;
-  --button-text: #ffffff;
+  --bg: #0b0e14;
+  --surface: #131820;
+  --text: #e6edf3;
+  --muted: #98a2b3;
+  --border: rgba(255,255,255,0.08);
+  --ring: rgba(26,115,232,0.45);
 }
 
-.App {
-  text-align: center;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Reset + base */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 20% -20%, rgba(26,115,232,0.10), transparent),
+              radial-gradient(800px 400px at 100% 10%, rgba(255,111,97,0.10), transparent),
+              var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Typography */
+h1,h2,h3,h4,h5,h6 { margin: 0 0 12px; line-height: 1.15; }
+p { margin: 0 0 12px; color: var(--muted); }
 
-.App-header {
-  background-color: var(--bg-secondary);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease;
-  position: relative;
-}
-
-.App-link {
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
-}
-
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 600;
+/* Utilities */
+.container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+.grid { display: grid; gap: 20px; }
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow: var(--shadow);
 }
-
-.theme-toggle:hover {
+.btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  opacity: 0.9;
+  border-color: var(--ring);
+  box-shadow: 0 12px 30px rgba(26,115,232,0.15);
+}
+.btnPrimary {
+  background: linear-gradient(135deg, var(--color-primary), #3a8bff);
+  color: #fff;
+  border: none;
+}
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.link:hover { text-decoration: underline; }
+
+/* Cards and surfaces */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ring);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
-.theme-toggle:active {
-  transform: translateY(0);
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+.reveal { opacity: 0; transform: translateY(16px); }
+.reveal.show { opacity: 1; transform: translateY(0); transition: .6s ease; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Responsive design for mobile */
-@media (max-width: 768px) {
-  .theme-toggle {
-    top: 10px;
-    right: 10px;
-    padding: 8px 16px;
-    font-size: 12px;
-  }
+/* Section spacing */
+section { padding: 64px 0; }
+@media (min-width: 768px) {
+  section { padding: 88px 0; }
 }

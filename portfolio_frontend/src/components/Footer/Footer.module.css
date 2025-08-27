@@ -1,0 +1,31 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+  margin-top: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.copy { color: var(--muted); font-size: 14px; }
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+.socials a {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
+}

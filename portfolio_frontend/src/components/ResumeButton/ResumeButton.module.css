@@ -1,0 +1,14 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--color-primary), #3a8bff);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 12px 26px rgba(26,115,232,0.35);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.icon { line-height: 1; }

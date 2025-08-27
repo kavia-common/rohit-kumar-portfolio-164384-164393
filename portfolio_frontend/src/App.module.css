@@ -1,0 +1,24 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  position: relative;
+  scroll-margin-top: 84px; /* for anchored nav */
+}
+
+.resumeCta {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+}
+
+@media (min-width: 768px) {
+  .resumeCta {
+    right: 24px;
+    bottom: 24px;
+  }
+}
